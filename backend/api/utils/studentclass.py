@@ -5,10 +5,10 @@ class student:
         self.schedule = schedule
 
         if schedule is None:
-            self.schedule = [["Free" for _ in range(7)] for _ in range(9)]
+            self.schedule = [["Free" for _ in range(7)] for _ in range(13)]
         else:
             self.schedule = schedule
-            
+
     def print_schedule(self):
         print(f"--- {self.name}'s Schedule (Rows: Periods, Cols: Days) ---")
         for index, row in enumerate(self.schedule):
