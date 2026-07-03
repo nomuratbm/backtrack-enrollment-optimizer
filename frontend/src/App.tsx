@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import headerImg from './assets/headerV2_2.png'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type CourseEntry = {
@@ -115,9 +116,7 @@ function App() {
 
       {/* ── Header ───────────────────────────────────────────────────────── */}
       <header className="p-header">
-        <div className="p-header__brand">
-          <span className="p-header__name">Hero's Party</span>
-        </div>
+        <img src={headerImg} className="p-header__logo-img" alt="myMAPUA" />
       </header>
 
       <div className="p-body">
