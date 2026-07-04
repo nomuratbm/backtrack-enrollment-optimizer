@@ -4,6 +4,7 @@ class course:
         self.section = section
         self.instructor = instructor
         self.units = units
+        
         if schedule is None:
             # 13 rows cover 7:00 am to 10:10 pm (covering up to 9:30 pm) in 1h 10m intervals.
             self.schedule = [["Free" for _ in range(7)] for _ in range(13)]
