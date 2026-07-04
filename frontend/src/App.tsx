@@ -195,44 +195,44 @@ function fillSched(raw: { slot: number; day: string; entry: SchedEntry }[]): Stu
 // AFTER optimization — all conflicts resolved
 const AFTER_SCHEDS: Record<number, StudentSched> = {
   18: fillSched([
-    { slot: 0, day: 'Tuesday',   entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
-    { slot: 1, day: 'Tuesday',   entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
-    { slot: 2, day: 'Tuesday',   entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
-    { slot: 4, day: 'Monday',    entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
+    { slot: 0, day: 'Tuesday', entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
+    { slot: 1, day: 'Tuesday', entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
+    { slot: 2, day: 'Tuesday', entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
+    { slot: 4, day: 'Monday', entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
     { slot: 4, day: 'Wednesday', entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
-    { slot: 4, day: 'Friday',    entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
-    { slot: 6, day: 'Monday',    entry: { code: 'CSS134-1', section: 'BM6', room: 'MPO504' } },
+    { slot: 4, day: 'Friday', entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
+    { slot: 6, day: 'Monday', entry: { code: 'CSS134-1', section: 'BM6', room: 'MPO504' } },
     { slot: 6, day: 'Wednesday', entry: { code: 'CSS134-1', section: 'BM6', room: 'MPO504' } },
-    { slot: 6, day: 'Friday',    entry: { code: 'CSS134-1', section: 'BM6', room: 'MPO504' } },
-    { slot: 7, day: 'Monday',    entry: { code: 'ITS150P', section: 'BM3', room: 'MPO401' } },
+    { slot: 6, day: 'Friday', entry: { code: 'CSS134-1', section: 'BM6', room: 'MPO504' } },
+    { slot: 7, day: 'Monday', entry: { code: 'ITS150P', section: 'BM3', room: 'MPO401' } },
     { slot: 7, day: 'Wednesday', entry: { code: 'ITS150P', section: 'BM3', room: 'MPO401' } },
-    { slot: 7, day: 'Friday',    entry: { code: 'ITS150P', section: 'BM3', room: 'MPO401' } },
+    { slot: 7, day: 'Friday', entry: { code: 'ITS150P', section: 'BM3', room: 'MPO401' } },
   ]),
   1: fillSched([
-    { slot: 0, day: 'Tuesday',   entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
-    { slot: 1, day: 'Tuesday',   entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
-    { slot: 2, day: 'Tuesday',   entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
-    { slot: 3, day: 'Monday',    entry: { code: 'CSS134-1', section: 'BM3', room: 'MPO401' } },
+    { slot: 0, day: 'Tuesday', entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
+    { slot: 1, day: 'Tuesday', entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
+    { slot: 2, day: 'Tuesday', entry: { code: 'CSS152P', section: 'BM1', room: 'MPO304' } },
+    { slot: 3, day: 'Monday', entry: { code: 'CSS134-1', section: 'BM3', room: 'MPO401' } },
     { slot: 3, day: 'Wednesday', entry: { code: 'CSS134-1', section: 'BM3', room: 'MPO401' } },
-    { slot: 3, day: 'Friday',    entry: { code: 'CSS134-1', section: 'BM3', room: 'MPO401' } },
-    { slot: 4, day: 'Monday',    entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
+    { slot: 3, day: 'Friday', entry: { code: 'CSS134-1', section: 'BM3', room: 'MPO401' } },
+    { slot: 4, day: 'Monday', entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
     { slot: 4, day: 'Wednesday', entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
-    { slot: 4, day: 'Friday',    entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
-    { slot: 5, day: 'Monday',    entry: { code: 'ITS150P', section: 'BM1', room: 'MPO409' } },
+    { slot: 4, day: 'Friday', entry: { code: 'CSS133-1', section: 'BM1', room: 'MPO602' } },
+    { slot: 5, day: 'Monday', entry: { code: 'ITS150P', section: 'BM1', room: 'MPO409' } },
     { slot: 5, day: 'Wednesday', entry: { code: 'ITS150P', section: 'BM1', room: 'MPO409' } },
-    { slot: 5, day: 'Friday',    entry: { code: 'ITS150P', section: 'BM1', room: 'MPO409' } },
+    { slot: 5, day: 'Friday', entry: { code: 'ITS150P', section: 'BM1', room: 'MPO409' } },
   ]),
   2: fillSched([
-    { slot: 0, day: 'Monday',    entry: { code: 'CSS133-1', section: 'BM4', room: 'MPO602' } },
+    { slot: 0, day: 'Monday', entry: { code: 'CSS133-1', section: 'BM4', room: 'MPO602' } },
     { slot: 0, day: 'Wednesday', entry: { code: 'CSS133-1', section: 'BM4', room: 'MPO602' } },
-    { slot: 0, day: 'Friday',    entry: { code: 'CSS133-1', section: 'BM4', room: 'MPO602' } },
-    { slot: 1, day: 'Tuesday',   entry: { code: 'ITS150P', section: 'BM4', room: 'MPO401' } },
-    { slot: 1, day: 'Thursday',  entry: { code: 'ITS150P', section: 'BM4', room: 'MPO401' } },
+    { slot: 0, day: 'Friday', entry: { code: 'CSS133-1', section: 'BM4', room: 'MPO602' } },
+    { slot: 1, day: 'Tuesday', entry: { code: 'ITS150P', section: 'BM4', room: 'MPO401' } },
+    { slot: 1, day: 'Thursday', entry: { code: 'ITS150P', section: 'BM4', room: 'MPO401' } },
     { slot: 2, day: 'Wednesday', entry: { code: 'CSS152P', section: 'BM2', room: 'MPO304' } },
     { slot: 3, day: 'Wednesday', entry: { code: 'CSS152P', section: 'BM2', room: 'MPO304' } },
     { slot: 4, day: 'Wednesday', entry: { code: 'CSS152P', section: 'BM2', room: 'MPO304' } },
-    { slot: 5, day: 'Tuesday',   entry: { code: 'CSS134-1', section: 'BM5', room: 'MPO504' } },
-    { slot: 5, day: 'Thursday',  entry: { code: 'CSS134-1', section: 'BM5', room: 'MPO504' } },
+    { slot: 5, day: 'Tuesday', entry: { code: 'CSS134-1', section: 'BM5', room: 'MPO504' } },
+    { slot: 5, day: 'Thursday', entry: { code: 'CSS134-1', section: 'BM5', room: 'MPO504' } },
   ]),
 }
 
@@ -242,17 +242,17 @@ MOCK_STUDENTS.forEach(s => {
   const seed = s.id
   const raw: { slot: number; day: string; entry: SchedEntry }[] = []
   const base = seed % 4
-  raw.push({ slot: base,     day: 'Monday',    entry: { code: 'CSS133-1', section: `BM${seed % 6 + 1}`, room: 'MPO602' } })
-  raw.push({ slot: base + 1, day: 'Monday',    entry: { code: 'CSS133-1', section: `BM${seed % 6 + 1}`, room: 'MPO602' } })
-  raw.push({ slot: base + 2, day: 'Monday',    entry: { code: 'CSS133-1', section: `BM${seed % 6 + 1}`, room: 'MPO602' } })
-  raw.push({ slot: seed % 3,     day: 'Tuesday', entry: { code: 'ITS150P', section: `BM${seed % 5 + 1}`, room: 'MPO401' } })
+  raw.push({ slot: base, day: 'Monday', entry: { code: 'CSS133-1', section: `BM${seed % 6 + 1}`, room: 'MPO602' } })
+  raw.push({ slot: base + 1, day: 'Monday', entry: { code: 'CSS133-1', section: `BM${seed % 6 + 1}`, room: 'MPO602' } })
+  raw.push({ slot: base + 2, day: 'Monday', entry: { code: 'CSS133-1', section: `BM${seed % 6 + 1}`, room: 'MPO602' } })
+  raw.push({ slot: seed % 3, day: 'Tuesday', entry: { code: 'ITS150P', section: `BM${seed % 5 + 1}`, room: 'MPO401' } })
   raw.push({ slot: seed % 3 + 1, day: 'Tuesday', entry: { code: 'ITS150P', section: `BM${seed % 5 + 1}`, room: 'MPO401' } })
   raw.push({ slot: 2, day: 'Wednesday', entry: { code: 'CSS152P', section: `BM${seed % 7 + 1}`, room: 'MPO304' } })
   raw.push({ slot: 3, day: 'Wednesday', entry: { code: 'CSS152P', section: `BM${seed % 7 + 1}`, room: 'MPO304' } })
   raw.push({ slot: 4, day: 'Wednesday', entry: { code: 'CSS152P', section: `BM${seed % 7 + 1}`, room: 'MPO304' } })
-  raw.push({ slot: 5, day: 'Monday',    entry: { code: 'CSS134-1', section: `BM${seed % 4 + 1}`, room: 'MPO504' } })
+  raw.push({ slot: 5, day: 'Monday', entry: { code: 'CSS134-1', section: `BM${seed % 4 + 1}`, room: 'MPO504' } })
   raw.push({ slot: 5, day: 'Wednesday', entry: { code: 'CSS134-1', section: `BM${seed % 4 + 1}`, room: 'MPO504' } })
-  raw.push({ slot: 5, day: 'Friday',    entry: { code: 'CSS134-1', section: `BM${seed % 4 + 1}`, room: 'MPO504' } })
+  raw.push({ slot: 5, day: 'Friday', entry: { code: 'CSS134-1', section: `BM${seed % 4 + 1}`, room: 'MPO504' } })
   AFTER_SCHEDS[s.id] = fillSched(raw)
 })
 
@@ -274,35 +274,136 @@ function App() {
   const [optimizerLog, setOptimizerLog] = useState<string[]>([])
   const [assignFilter, setAssignFilter] = useState('')
   const [activeStudentCompId, setActiveStudentCompId] = useState<number>(18)
+  // API results: keyed by studentId → StudentSched
+  const [apiSchedules, setApiSchedules] = useState<Record<number, StudentSched>>({})
+  const [apiError, setApiError] = useState<string | null>(null)
 
-  function runOptimizer() {
-    setOptimizerState('running')
-    setOptimizerLog([])
-    const steps = [
-      '⟶ Initializing state-space tree …',
-      '⟶ Loading 20 students, 28 course sections …',
-      '⟶ Checking constraint: time conflict …',
-      '⟶ Checking constraint: max gap (≤70 min) …',
-      '⟶ Checking constraint: consecutive limit (≤210 min) …',
-      '⟶ Checking constraint: section capacity (≤40) …',
-      '⟶ Backtracking at student #7 — conflict detected, pruning branch …',
-      '⟶ Retrying with alternate section BM3 …',
-      '⟶ Backtracking at student #14 — gap violation, pruning branch …',
-      '⟶ Retrying with alternate section BM6 …',
-      '⟶ All constraints satisfied for 20/20 students …',
-      '✅ Optimization complete — 80 assignments generated.',
-    ]
-    let i = 0
-    const tick = () => {
-      if (i < steps.length) {
-        setOptimizerLog(prev => [...prev, steps[i]])
-        i++
-        setTimeout(tick, 420)
-      } else {
-        setOptimizerState('done')
-      }
+    // Helper: get courses and their schedules for any student
+    function getStudentCourses(sid: number) {
+      const assigned = MOCK_ASSIGNMENTS.filter(a => a.studentId === sid)
+      if (assigned.length > 0) return assigned
+
+      const student = MOCK_STUDENTS.find(s => s.id === sid)
+      const studentName = student ? student.name : 'Unknown'
+      
+      const courseKeys = [
+        { code: 'CSS133-1', sec: `BM${(sid % 6) + 1}` },
+        { code: 'ITS150P', sec: `BM${(sid % 5) + 1}` },
+        { code: 'CSS152P', sec: `BM${(sid % 7) + 1}` },
+        { code: 'CSS134-1', sec: `BM${(sid % 4) + 1}` },
+      ]
+
+      return courseKeys.map(({ code, sec }) => {
+        const found = MOCK_COURSES.find(c => c.courseCode === code && c.section === sec)
+        return {
+          studentId: sid,
+          studentName,
+          courseCode: code,
+          section: sec,
+          instructor: found ? found.instructor : 'TBA',
+          schedule: found ? found.schedule : 'MWF 7:00AM-8:10AM'
+        }
+      })
     }
-    tick()
+
+    // Helper: parse schedule string like "MWF 9:20AM-10:30AM" or "Tue 7:00AM-9:20AM"
+    // into timeslots array for the API
+    function parseScheduleToTimeslots(schedStr: string): { time: string; day: string }[] {
+      const DAY_MAP: Record<string, string[]> = {
+        'M': ['Monday'], 'T': ['Tuesday'], 'W': ['Wednesday'],
+        'Th': ['Thursday'], 'F': ['Friday'], 'Sat': ['Saturday'],
+        'MWF': ['Monday', 'Wednesday', 'Friday'],
+        'TTh': ['Tuesday', 'Thursday'],
+        'Mon': ['Monday'], 'Tue': ['Tuesday'], 'Wed': ['Wednesday'],
+        'Thu': ['Thursday'], 'Fri': ['Friday'],
+      }
+      const parts = schedStr.split(' ')
+      const dayPart = parts[0]
+      const timePart = parts.slice(1).join(' ').replace('–', '-').replace('—', '-')
+      const days = DAY_MAP[dayPart] ?? [dayPart]
+      return days.map(day => ({ time: timePart.toLowerCase(), day }))
+    }
+
+    // Helper: parse API response row string "COURSECODE-SECTION" -> { code, section }
+    function parseCellStr(cell: string): { code: string; section: string } | null {
+      if (!cell || cell === 'Free' || cell === 'free') return null
+      const lastDash = cell.lastIndexOf('-')
+      if (lastDash === -1) return { code: cell, section: '' }
+      return { code: cell.slice(0, lastDash), section: cell.slice(lastDash + 1) }
+    }
+
+    try {
+      const steps = [
+        '⟶ Initializing state-space tree …',
+        '⟶ Loading 20 students, 28 course sections …',
+        '⟶ Sending data to backtracking optimizer …',
+      ]
+      for (const step of steps) {
+        setOptimizerLog(prev => [...prev, step])
+        await new Promise(r => setTimeout(r, 150))
+      }
+
+      const newApiSchedules: Record<number, StudentSched> = {}
+
+      // Call API for all 20 students dynamically
+      const studentIds = MOCK_STUDENTS.map(s => s.id)
+
+      for (const sid of studentIds) {
+        const student = MOCK_STUDENTS.find(s => s.id === sid)
+        if (!student) continue
+
+        const studentAssignments = getStudentCourses(sid)
+        const coursesPayload = studentAssignments.map(a => ({
+          coursecode: a.courseCode,
+          section: a.section,
+          instructor: a.instructor,
+          units: 3,
+          timeslots: parseScheduleToTimeslots(a.schedule),
+        }))
+
+        setOptimizerLog(prev => [...prev, `⟶ Scheduling ${student.name} (${coursesPayload.length} courses) …`])
+
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ student: { id: student.id, name: student.name }, courses: coursesPayload }),
+        })
+
+        if (!res.ok) throw new Error(`HTTP ${res.status} for student ${student.name}`)
+
+        const data = await res.json()
+        if (!data.success || !Array.isArray(data.schedule)) {
+          throw new Error(`Unexpected API response for ${student.name}`)
+        }
+
+        // Parse the 13×7 grid into StudentSched
+        const sched = makeEmpty()
+        const apiGrid: string[][] = data.schedule
+        apiGrid.forEach((row, si) => {
+          DAYS.forEach((day, di) => {
+            const cell = row[di] ?? 'Free'
+            const parsed = parseCellStr(cell)
+            if (parsed) {
+              sched[si][day] = { code: parsed.code, section: parsed.section, room: '' }
+            }
+          })
+        })
+        newApiSchedules[sid] = sched
+      }
+
+      setApiSchedules(newApiSchedules)
+      setOptimizerLog(prev => [...prev,
+        '⟶ All constraints satisfied …',
+        `✅ Optimization complete — ${studentIds.length} students scheduled.`,
+      ])
+      setOptimizerState('done')
+
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err)
+      setApiError(`API error: ${msg}`)
+      setOptimizerLog(prev => [...prev, `❌ Error: ${msg}`])
+      setOptimizerState('done')
+    }
   }
 
   const filteredStudents = MOCK_STUDENTS.filter(s =>
@@ -488,7 +589,7 @@ function App() {
                                 <span className="tbl-time-to">{slot.end}</span>
                               </td>
                               {DAYS.map(day => {
-                                const entry = SCHEDULE[si][day]
+                                const entry = apiSchedules[18]?.[si]?.[day] ?? SCHEDULE[si][day]
                                 return (
                                   <td
                                     key={day}
@@ -737,7 +838,8 @@ function App() {
                             </thead>
                             <tbody>
                               {TIME_SLOTS.map((slot, si) => {
-                                const sched = AFTER_SCHEDS[activeStudentCompId]
+                                // Prefer real API data; fall back to mock
+                                const sched = apiSchedules[activeStudentCompId] ?? AFTER_SCHEDS[activeStudentCompId]
                                 return (
                                   <tr key={si} className="tbl-tr">
                                     <td className="tbl-td--time">
@@ -758,8 +860,8 @@ function App() {
                                           ].filter(Boolean).join(' ')}
                                           style={
                                             isConflict ? { background: '#ffebee' } :
-                                            isGap      ? { background: '#fff8e1' } :
-                                            undefined
+                                              isGap ? { background: '#fff8e1' } :
+                                                undefined
                                           }
                                         >
                                           {entry && (
@@ -783,6 +885,13 @@ function App() {
                           </table>
                         </div>
                       </div>
+
+                      {/* API error notice */}
+                      {apiError && (
+                        <div style={{ marginTop: '12px', padding: '10px 14px', background: '#fff3e0', border: '1px solid #ffcc80', borderRadius: '6px', fontSize: '12px', color: '#e65100' }}>
+                          ⚠️ {apiError} — showing mock schedule data instead.
+                        </div>
+                      )}
 
                     </div>
                   )}
