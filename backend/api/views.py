@@ -84,11 +84,13 @@ def schedule_student_view(request):
     success = schedulerfunction(student, courses)
 
     if success:
+        student.print_schedule()
         return Response({
             "success": True,
             "schedule": student.schedule,
         }, status=status.HTTP_200_OK)
     else:
+        print(f"[schedule_student] No valid schedule found for {student.name}.")
         return Response({
             "success": False,
             "message": (
