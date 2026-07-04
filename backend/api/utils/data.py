@@ -23,6 +23,8 @@ students = [
     student(id=18, name="Mico Tazarte"),
     student(id=19, name="John Vida"),
     student(id=20, name="Nigel Zomil"),
+    student(id=21, name="Lebbeus Santos"),
+    student(id=22, name="Kuya Axel"),
 ]
 
 # COURSES ARRAY
