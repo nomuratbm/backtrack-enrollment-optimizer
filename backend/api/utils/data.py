@@ -55,10 +55,14 @@ courses = [
     course(coursecode="ITS150P", section="BM5", instructor="Prof. Genidina", units=3), # 25
     course(coursecode="ITS150P", section="BM7", instructor="Prof. PrimoJr", units=3), # 26
     course(coursecode="ITS150P", section="BM8", instructor="Prof. Morla", units=3), # 27
+    course(coursecode="CSS182-01", section="BM1", instructor="Prof. Costales", units=3), # 28
+    course(coursecode="CSS182-01", section="BM2", instructor="Prof. Costales", units=3), # 29
     # course(coursecode="...", section="...", instructor="...", units=3),
 ]
 
 # SECTION SCHEDULES
+
+# CSS133-1
 courses[0].add_to_schedule("11:40am-12:50pm", "Monday")
 courses[0].add_to_schedule("11:40am-12:50pm", "Wednesday")
 courses[0].add_to_schedule("11:40am-12:50pm", "Friday")
@@ -87,6 +91,7 @@ courses[6].add_to_schedule("2:00pm-3:10pm", "Monday")
 courses[6].add_to_schedule("2:00pm-3:10pm", "Wednesday")
 courses[6].add_to_schedule("2:00pm-3:10pm", "Friday")
 
+# CSS134-1
 courses[7].add_to_schedule("10:30am-11:40am", "Monday")
 courses[7].add_to_schedule("10:30am-11:40am", "Wednesday")
 courses[7].add_to_schedule("10:30am-11:40am", "Friday")
@@ -115,6 +120,7 @@ courses[13].add_to_schedule("5:30pm-6:40pm", "Monday")
 courses[13].add_to_schedule("5:30pm-6:40pm", "Wednesday")
 courses[13].add_to_schedule("5:30pm-6:40pm", "Friday")
 
+# CSS152P
 courses[14].add_to_schedule("3:10pm-4:20pm", "Monday")
 courses[14].add_to_schedule("7:00am-10:30am", "Tuesday")
 courses[14].add_to_schedule("3:10pm-4:20pm", "Wednesday")
@@ -143,6 +149,7 @@ courses[20].add_to_schedule("3:10pm-4:20pm", "Monday")
 courses[20].add_to_schedule("2:00pm-5:30pm", "Tuesday")
 courses[20].add_to_schedule("3:10pm-4:20pm", "Wednesday")
 
+# ITS150P
 courses[21].add_to_schedule("2:00pm-3:10pm", "Monday")
 courses[21].add_to_schedule("10:30am-2:00pm", "Tuesday")
 courses[21].add_to_schedule("2:00pm-3:10pm", "Wednesday")
@@ -171,6 +178,9 @@ courses[27].add_to_schedule("12:50pm-2:00pm", "Monday")
 courses[27].add_to_schedule("10:30am-2:00pm", "Tuesday")
 courses[27].add_to_schedule("12:50pm-2:00pm", "Wednesday")
 
+# CSS182-01
+courses[28].add_to_schedule("7:00am-10:30am", "Saturday")
+courses[29].add_to_schedule("10:30am-2:00pm", "Saturday")
 
 if __name__ == "__main__":
     for s in students:
