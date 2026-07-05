@@ -110,4 +110,185 @@ export const PREMADE_PROFILES: { label: string; payload: SchedulerPayload }[] = 
       ],
     },
   },
+
+  // ── Mico Tazarte — 7 subjects, multi-day (MWF + TTh), success case ─────────
+  // Layout:
+  //   Mon/Wed/Fri  →  periods 0, 1  (MATH301, PHYS301)
+  //   Mon/Wed      →  period  2     (FIL301)
+  //   Tue/Thu      →  periods 0, 1, 2  (CS301, ENG301, HIS301)
+  //   Saturday     →  period  0     (PE301)
+  //
+  // Gap analysis (per day, periods 0-based):
+  //   Every new course on a shared day lands exactly 1 period away from the
+  //   nearest already-scheduled period  →  gap ≤ 1 always satisfied.
+  //   Max consecutive run on any day = 3  →  consecutive constraint satisfied.
+  {
+    label: '✅ Success Case — Mico Tazarte (7 courses, MWF + TTh pattern)',
+    payload: {
+      student: { id: 3, name: 'Mico Tazarte' },
+      courses: [
+        // ── MWF cluster ───────────────────────────────────────────────────
+        {
+          coursecode: 'MATH301',
+          section: 'A',
+          instructor: 'Dr. Santos',
+          units: 3,
+          timeslots: [
+            { time: '7:00am-8:10am', day: 'Monday' },    // period 0
+            { time: '7:00am-8:10am', day: 'Wednesday' },
+            { time: '7:00am-8:10am', day: 'Friday' },
+          ],
+        },
+        {
+          coursecode: 'PHYS301',
+          section: 'A',
+          instructor: 'Dr. Lim',
+          units: 3,
+          timeslots: [
+            { time: '8:10am-9:20am', day: 'Monday' },    // period 1 (gap=1 from MATH301) ✓
+            { time: '8:10am-9:20am', day: 'Wednesday' },
+            { time: '8:10am-9:20am', day: 'Friday' },
+          ],
+        },
+        {
+          coursecode: 'FIL301',
+          section: 'A',
+          instructor: 'Dr. Garcia',
+          units: 3,
+          timeslots: [
+            { time: '9:20am-10:30am', day: 'Monday' },   // period 2 (gap=1 from PHYS301) ✓
+            { time: '9:20am-10:30am', day: 'Wednesday' },
+          ],
+        },
+        // ── TTh cluster ───────────────────────────────────────────────────
+        {
+          coursecode: 'CS301',
+          section: 'A',
+          instructor: 'Dr. Cruz',
+          units: 3,
+          timeslots: [
+            { time: '7:00am-8:10am', day: 'Tuesday' },   // period 0 (first course on Tue/Thu)
+            { time: '7:00am-8:10am', day: 'Thursday' },
+          ],
+        },
+        {
+          coursecode: 'ENG301',
+          section: 'A',
+          instructor: 'Dr. Reyes',
+          units: 3,
+          timeslots: [
+            { time: '8:10am-9:20am', day: 'Tuesday' },   // period 1 (gap=1 from CS301) ✓
+            { time: '8:10am-9:20am', day: 'Thursday' },
+          ],
+        },
+        {
+          coursecode: 'HIS301',
+          section: 'A',
+          instructor: 'Dr. Bautista',
+          units: 3,
+          timeslots: [
+            { time: '9:20am-10:30am', day: 'Tuesday' },  // period 2 (gap=1 from ENG301) ✓
+            { time: '9:20am-10:30am', day: 'Thursday' },
+          ],
+        },
+        // ── Weekend standalone ────────────────────────────────────────────
+        {
+          coursecode: 'PE301',
+          section: 'A',
+          instructor: 'Coach Dela Cruz',
+          units: 2,
+          timeslots: [
+            { time: '7:00am-8:10am', day: 'Saturday' },  // no shared-day students → gap N/A ✓
+          ],
+        },
+      ],
+    },
+  },
+
+  // ── Joel Balagot — 7 subjects, guaranteed failure case ─────────────────────
+  // Three of his courses are locked to Monday but spaced 4 periods apart:
+  //   MATH302 → Mon period 0  (7:00am)
+  //   ENG302  → Mon period 4  (11:40am)  gap from period 0 = 4 > 1  ✗
+  //   SCI302  → Mon period 8  (4:20pm)   gap from period 4 = 4 > 1  ✗
+  //
+  // No matter which Monday course is added first, the next Monday course is
+  // always > 1 period away → the backtracker exhausts ALL orderings and fails.
+  // The remaining 4 courses (different days) can combine fine among themselves,
+  // but they cannot rescue the Monday deadlock.
+  {
+    label: '❌ Failure Case — Joel Balagot (7 courses, Monday gap deadlock)',
+    payload: {
+      student: { id: 4, name: 'Joel Balagot' },
+      courses: [
+        // ── Monday deadlock trio (gaps of 4 → always violates gap ≤ 1) ───
+        {
+          coursecode: 'MATH302',
+          section: 'B',
+          instructor: 'Dr. Santos',
+          units: 3,
+          timeslots: [
+            { time: '7:00am-8:10am', day: 'Monday' },    // period 0
+          ],
+        },
+        {
+          coursecode: 'ENG302',
+          section: 'B',
+          instructor: 'Dr. Reyes',
+          units: 3,
+          timeslots: [
+            { time: '11:40am-12:50pm', day: 'Monday' },  // period 4 — gap 4 from MATH302 ✗
+          ],
+        },
+        {
+          coursecode: 'SCI302',
+          section: 'B',
+          instructor: 'Dr. Lim',
+          units: 3,
+          timeslots: [
+            { time: '4:20pm-5:30pm', day: 'Monday' },    // period 8 — gap 4 from ENG302 ✗
+          ],
+        },
+        // ── Valid filler courses (Tue/Wed/Thu/Fri — no internal conflicts) ─
+        {
+          coursecode: 'CS302',
+          section: 'B',
+          instructor: 'Dr. Cruz',
+          units: 3,
+          timeslots: [
+            { time: '7:00am-8:10am', day: 'Tuesday' },
+            { time: '7:00am-8:10am', day: 'Wednesday' },
+          ],
+        },
+        {
+          coursecode: 'FIL302',
+          section: 'B',
+          instructor: 'Dr. Garcia',
+          units: 3,
+          timeslots: [
+            { time: '8:10am-9:20am', day: 'Tuesday' },   // gap=1 from CS302 on Tue ✓
+            { time: '8:10am-9:20am', day: 'Thursday' },
+          ],
+        },
+        {
+          coursecode: 'HIS302',
+          section: 'B',
+          instructor: 'Dr. Bautista',
+          units: 3,
+          timeslots: [
+            { time: '8:10am-9:20am', day: 'Wednesday' }, // gap=1 from CS302 on Wed ✓
+            { time: '8:10am-9:20am', day: 'Friday' },
+          ],
+        },
+        {
+          coursecode: 'PE302',
+          section: 'B',
+          instructor: 'Coach Dela Cruz',
+          units: 2,
+          timeslots: [
+            { time: '7:00am-8:10am', day: 'Saturday' },
+          ],
+        },
+      ],
+    },
+  },
 ]
