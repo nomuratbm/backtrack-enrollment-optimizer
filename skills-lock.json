@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "django-expert": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "skillPath": "skills/django-expert/SKILL.md",
+      "computedHash": "980bafbe21deb217078c9e26ecfb0b84f3363269831c7b50443aab46d3dd91c2"
+    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
